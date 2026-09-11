@@ -1,30 +1,42 @@
-﻿namespace CafeBussiness
+﻿using CafeEntity;
+using System.Text;
+
+namespace CafeBussiness
 {
     public class CafeBiz
     {
-        public int NivelAguaMl { get; private set; }
-        public int GranosCafeGramos { get; private set; } = 0;
 
-
-        public CafeBiz(int aguaInicial, int cafeInicial)
+        public CafeBiz()
         {
-            NivelAguaMl = aguaInicial;
-            GranosCafeGramos = cafeInicial;
+    
         }
 
-        public bool PrepararCafe(int tamanoTazaMl)
+
+        public void Capuchino() 
         {
-            int cafeNecesario = tamanoTazaMl / 10;
+            StringBuilder sb = new StringBuilder();
+            IProducto b = new Cafe(); // Cafe solo
 
-            if (NivelAguaMl < tamanoTazaMl || GranosCafeGramos < cafeNecesario)
-            {
-                return false; // No hay suficientes insumos
-            }
 
-            NivelAguaMl -= tamanoTazaMl;
-            GranosCafeGramos -= cafeNecesario;
-            return true;
+            //sb.Append(b.Description);
+            //sb.Append(b.Price);
+            //sb.AppendLine();
+
+            b = new Leche(new Chocolate(new Canela(new Cafe()))); // Cafe Decorado
+            sb.Append(b.Description);
+            sb.Append(b.Price);
+            sb.AppendLine();
+
+            //b = new Leche(new Te());
+            //sb.Append(b.Description);
+            //sb.Append(b.Price);
+            //sb.AppendLine();
+
+            Console.WriteLine(sb.ToString());
         }
+
+
+
 
 
     }

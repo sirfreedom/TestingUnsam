@@ -13,4 +13,9 @@
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.37.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CafeBussiness\CafeBussiness.csproj" />
+    <ProjectReference Include="..\CafeEntity\CafeEntity.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,15 +1,13 @@
-﻿
-namespace CafeEntity
+﻿namespace CafeEntity
 {
-    public class Chocolate : Bebida
+    public class Canela : Bebida
     {
+
         IProducto _Bebida;
-        
-        const double PRICE = 2.25;
+        const double PRICE = 1.10;
+        const string DESCRIPTION = " Canela ";
 
-        const string DESCRIPTION = " Chocolate ";
-
-        public Chocolate(IProducto bebida)
+        public Canela(IProducto bebida)
         {
             _Bebida = bebida;
         }
@@ -29,6 +27,8 @@ namespace CafeEntity
                 return base.Price + _Bebida.Price + PRICE;
             }
         }
+
+
 
 
 

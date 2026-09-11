@@ -1,16 +1,17 @@
 ﻿namespace CafeEntity
 {
-    public class Cafe : Producto
+    public class Cafe : Bebida, IProducto
     {
-        public Cafe()
+
+        public override double Price
         {
-            Precio = 2000;
-            Nombre = "Cafe";
+            get { return 10; }          
         }
 
-
-
-
+        public override string Description 
+        { 
+            get { return "Shot Cafe"; }
+        } 
 
     }
 }
