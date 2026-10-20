@@ -1,12 +1,10 @@
 ﻿using CafeBussiness;
+using OpenQA.Selenium.Chrome;
 
 namespace UnitTest
 {
     public class UnitTest1
     {
-
-
-
 
         [Fact]
         public void PrepararCafe_ConInsumosSuficientes_RestaInsumosYDevuelveTrue()
@@ -22,6 +20,18 @@ namespace UnitTest
             //Assert.Equal(300, maquina.NivelAguaMl);
             //Assert.Equal(30, maquina.GranosCafeGramos);
         }
+
+        [Fact]
+        public void PruebaSelenium()
+        {
+             using (var driver = new ChromeDriver())
+             {
+                 SeleniumHelper seleniumHelper = new SeleniumHelper(driver, "https://quotes.toscrape.com/");
+                 seleniumHelper.TestSelenium();
+             }
+        }
+
+
 
 
 
